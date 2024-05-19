@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Container {
+    min-height: 100vh;
+    background-image: url('./images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.Container-child {
+    width: 95%;
+    height: 540px;
+    background-color: rgba(255, 255, 255, 0.413);
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 15px black;
+    border-radius: 20px;
+}
+
+.Justify-content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Header {
+    border-bottom: 2px solid purple;
+    padding: 6px;
+    font-family: cursive;
+    color: blueviolet;
+}
+
+.Result-container {
+    height: 90px;
+    border-bottom: 2px solid purple;
+    margin: 5px 0;
+}
+.Table{
+    width: 100%;
+}
+.Table tr {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.Table
+th,
+td {
+    width: 3.84%;
+    height: 45px;
+    flex-grow: 1;
+    font-size: 30px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px 10px;
+    text-align: center;
+}
+.Table td{
+    height: 35px;
+    padding: 0;
+    text-overflow: hidden;
+    font-size: 25px;
+}
+.Input-container{
+    height: fit-content;
+}
+.Input-elm{
+    width: 100%;
+    height: 32px;
+    font-size: 30px;
+    padding: 2px 10px 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px dashed grey;
+}
+.Input-elm:focus{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px dashed grey;
+    outline: none;
+}
