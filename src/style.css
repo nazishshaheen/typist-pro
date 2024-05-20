@@ -66,6 +66,7 @@ td {
 }
 .Input-container{
     height: fit-content;
+    overflow-y: scroll;
 }
 .Input-elm{
     width: 100%;
