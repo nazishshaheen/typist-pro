@@ -1,25 +1,14 @@
 // import { } from '../functions/charCounter';
+import { keyboard } from '@testing-library/user-event/dist/keyboard';
 import '../style.css';
 import Input from './Input';
 import React, { useEffect, useRef } from "react";
+import { checkInput } from '../functions/charCounter';
 
 
 function InputContainer() {
     useEffect(() => {
-        document.querySelector('.Input-elm').focus();
-        let allInputs = document.querySelectorAll('.Input-elm');
-        for (let input of allInputs) {
-            input.addEventListener("keyup", (e) => {
-                
-                if (e.target.value.length > 88) {
-                    e.target.nextElementSibling.focus();
-                    console.dir(e.target);
-                    // console.log(e.target.value.length);
-
-                }
-                // console.log(e.target.value.length);
-            })
-        }
+        checkInput();
     }, []);
     return (
         <div className='Input-container'>
