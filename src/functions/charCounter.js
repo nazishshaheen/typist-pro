@@ -36,42 +36,38 @@
 //     }
 //     return maxLength;
 
+// }
 import Input from "../components/Input";
 
-// }
-function checkInput() {
+function focusAndNewline() {
     document.querySelector('.Input-elm').focus();
     let allInputs = document.querySelectorAll('.Input-elm');
 
     for (let input of allInputs) {
-        input.addEventListener("input", (e) => {
-
-            if (e.target.value.length) {
-                // e.target.nextElementSibling.focus();
-                console.dir(e);
-                // console.log(e.target.value.length);
-
-            }
-            // console.log(e.target.value.length);
-        })
-        input.addEventListener("keydown", (e) => {
-
-            if (e.key === 'Enter' || e.keyCode === 13) {
-                if (e.target.nextElementSibling) {
-                    e.target.nextElementSibling.focus();
-                } else {
-                    console.log("new");
-                    <Input />
-                    checkInput();
-                }
-
-            }
-        })
+        input.addEventListener("keydown", (e) => { callback(e)})
     }
 
 }
 
+function addEvents(){
+    let allInputs = document.querySelectorAll('.Input-elm');
+    for (let input of allInputs) {
+        input.addEventListener("keydown", (e)=>{callback(e)})
+    }
+}
+function callback(e){
+    if (e.key === 'Enter' || e.keyCode === 13) {
+        if (e.target.nextElementSibling) {
+            e.target.nextElementSibling.focus();
+        } else {
+            console.log("new");
+            <Input addInput={addInput}/>
+            addEvents();
+        }
+
+    }
+}
 
 export {
-    checkInput
+    focusAndNewline
 }
